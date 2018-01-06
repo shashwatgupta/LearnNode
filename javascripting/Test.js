@@ -11,24 +11,25 @@ function Home() {
 };
 
 var myHome = new Home();
-myHome.color = "Red";
+
 var objectLiteral = {
     name: 'shashwat',
     age: 32
 }
 
-Object.beget = function(o) {
-    var x = o;
-    x.color = "green";
-    return x;
 
-}
 
-//var another_home = Object.create(myHome);
+var another_home = Object.create(myHome);
 
-var another_home =  Object.beget(myHome);
-   
+// // Object.prototype.beget = function(myhome)
+// // {
+// //  var x =  new Home();
+// //     x.prototype = myHome;   
+// //     return x;
+// // }
 
-console.log(typeof objectLiteral);
+// var home2 = myHome.beget();
+
+// //console.log(typeof objectLiteral);
 
 // console.log(typeof Home.prototype.prototype);
