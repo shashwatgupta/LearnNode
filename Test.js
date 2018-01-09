@@ -1,35 +1,17 @@
-var x = 1;
-var y = false;
-//label : console.log("\u0067");
-function Home() {
-    this.color = 'yellow';
-    {
-        var purchasePrice = '640K';
+var object = {
+    a: 2,
+    b: 3,
+    c: 4,
+    d: function(){
+        console.log('hello');
+    e: 
     }
-  //  console.log(purchasePrice);
-//    return 
-};
-
-var myHome = new Home();
-
-var objectLiteral = {
-    name: 'shashwat',
-    age: 32
+}
+var o = new Object();
+for(var property in object){
+  o[property] = object[property];
 }
 
-
-
-var another_home = Object.create(myHome);
-
-// // Object.prototype.beget = function(myhome)
-// // {
-// //  var x =  new Home();
-// //     x.prototype = myHome;   
-// //     return x;
-// // }
-
-// var home2 = myHome.beget();
-
-// //console.log(typeof objectLiteral);
-
-// console.log(typeof Home.prototype.prototype);
+o.a = 5;
+o.d = function(){ console.log("bye");}
+console.log(object.d());
