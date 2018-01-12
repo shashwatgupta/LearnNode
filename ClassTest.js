@@ -10,15 +10,20 @@ var rectangle = function () {
     }
 }
 
-var x = rectangle();
-x.changeLength(2);
-x.changeWidth(5);
-console.log(x.area());
-console.log(x.Parameter());
+var Student = function (nameX, age) {
+    this.nameX = nameX;
+    this.age = age;
+  }
 
-var y = rectangle();
-console.log(y.area());
+Function.prototype.new = function() {
+    var obj =  {};
+    obj.nameX = this.nameX;
+    obj.age = this.age;
+    obj.__proto__ = this.prototype;
+    return obj;
+}
 
-console.log(x.area());
 
-console.log(x.changeLength(5).changeWidth(8).area());
+var x = Student.new();
+var y = new Student();
+console.log('h');

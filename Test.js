@@ -1,17 +1,13 @@
-var object = {
-    a: 2,
-    b: 3,
-    c: 4,
-    d: function(){
-        console.log('hello');
-    e: 
+var x = ['w','y','z'];
+
+Array.prototype.contains = function(z) {
+    for(var i = 0 ; i < this.length ; i++)
+    {
+        if(this[i] == z) return true;
     }
-}
-var o = new Object();
-for(var property in object){
-  o[property] = object[property];
+    return false;
 }
 
-o.a = 5;
-o.d = function(){ console.log("bye");}
-console.log(object.d());
+
+
+ 
