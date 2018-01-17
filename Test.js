@@ -1,13 +1,12 @@
-var x = ['w','y','z'];
+var current = {x:3, y:5};
 
-Array.prototype.contains = function(z) {
-    for(var i = 0 ; i < this.length ; i++)
-    {
-        if(this[i] == z) return true;
-    }
-    return false;
+if(Object(current) !== current)
+{
+    console.log('x');
 }
-
-
+else
+{
+    console.log('y');
+}
 
  
