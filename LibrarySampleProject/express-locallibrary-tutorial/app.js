@@ -9,6 +9,15 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+//Set up mongoose connection
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb://shashwatgupta:NewPassword1!@ds046367.mlab.com:46367/shashwatmongodb';
+mongoose.connect(mongoDB, {
+  useMongoClient: true
+});
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
