@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var moment = require('moment');
 
 var Schema = mongoose.Schema;
 
@@ -17,6 +18,21 @@ AuthorSchema
 .get(function () {
   return this.family_name + ', ' + this.first_name;
 });
+
+// Virtual for author's birth day
+AuthorSchema
+.virtual('date_of_birth_formatted')
+.get(function () {
+  return  moment(this.date_of_birth).format('MMMM Do, YYYY');
+});
+
+// Virtual for author's death day
+AuthorSchema
+.virtual('date_of_death_formatted')
+.get(function () {
+  return  moment(this.date_of_death).format('MMMM Do, YYYY');
+});
+
 
 // Virtual for author's URL
 AuthorSchema
